@@ -8,6 +8,7 @@ public class RedMineBasePage extends BasePage {
        
     TopMenu topMenu;
     
+    
     public RedMineBasePage(WebDriver driver) {
         super(driver);
         topMenu = new TopMenu(driver);

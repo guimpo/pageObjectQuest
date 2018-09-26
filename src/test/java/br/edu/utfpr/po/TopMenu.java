@@ -42,6 +42,12 @@ public class TopMenu extends BasePage {
         return new ProjectPage(driver);
     }
     
+    public MyPage goToMyPage() {
+        myPageLink = driver.findElement(By.xpath("//*[@id=\"top-menu\"]/ul/li[2]/a"));
+        myPageLink.click();
+        return new MyPage(driver);
+    }
+    
     public boolean isUserLoggedIn(String us) {
         try {
             WebElement user = driver.findElement(By.id("loggedas"));
