@@ -20,6 +20,8 @@ public class TopMenu extends BasePage {
     
     private WebElement myPageLink;
     
+    private WebElement projectsLink;
+    
     public TopMenu(WebDriver driver) {
         super(driver);
     }
@@ -32,6 +34,12 @@ public class TopMenu extends BasePage {
     public LoginPage goToLogin() {
         loginLink.click();
         return new LoginPage(driver);
+    }
+    
+    public ProjectPage goToProjects() {
+        projectsLink = driver.findElement(By.xpath("//*[@id=\"top-menu\"]/ul/li[3]/a"));
+        projectsLink.click();
+        return new ProjectPage(driver);
     }
     
     public boolean isUserLoggedIn(String us) {
